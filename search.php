@@ -1,11 +1,11 @@
-﻿
+
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
         <meta charset="utf-8">
-        <title>云南大学学生部门网上申请</title>
+        <title>���ϴ�ѧѧ��������������</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="Secpro">
@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="row">
                     <div class="logo span4">
-                        <h5><a href="">  云大小喇叭 <span class="red">.</span></a></h5>
+                        <h5><a href="">  �ƴ�С���� <span class="red">.</span></a></h5>
                     </div>
                 </div>
             </div>
@@ -40,12 +40,33 @@
                    
                 </div>
                 <div class="register span6">
-                    <form action="search.php" method="post">
-                        <h3>入部 <span class="red"><strong>申请</strong></span></h3>
-                        <label for="department">输入你要加入的部门</label>
-                        <input type="text" id="department" name="department" placeholder="请输入...">
-                        <button type="submit">搜索</button>
-                    </form>
+                    <form action="" method="post">
+
+						
+						
+<?php
+$con = mysql_connect("localhost","root","sw960602");
+if (!$con)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
+
+mysql_select_db("studentinfo", $con);
+
+$result = mysql_query("SELECT * FROM department WHERE NAME='$POST_['department']'");
+
+while($row = mysql_fetch_array($result))
+  {
+  echo "<a href=".$row['link'].">".$row['NAME']."</a>";
+  }
+
+mysql_close($con);
+?>
+                    
+					
+					
+					
+					</form>
                 </div>
             </div>
         </div>
