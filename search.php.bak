@@ -1,11 +1,11 @@
-
+ï»¿
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
         <meta charset="utf-8">
-        <title>ÔÆÄÏ´óÑ§Ñ§Éú²¿ÃÅÍøÉÏÉêÇë</title>
+        <title>äº‘å—å¤§å­¦å­¦ç”Ÿéƒ¨é—¨ç½‘ä¸Šç”³è¯·</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="Secpro">
@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="row">
                     <div class="logo span4">
-                        <h5><a href="">  ÔÆ´óÐ¡À®°È <span class="red">.</span></a></h5>
+                        <h5><a href="">  äº‘å¤§å°å–‡å­ <span class="red">.</span></a></h5>
                     </div>
                 </div>
             </div>
@@ -45,16 +45,24 @@
 						
 						
 <?php
-$NAME = $POST_['department'];
+$name = $_POST['department'];
 $con = mysql_connect("localhost","root","sw960602");
 if (!$con)
   {
-  die('Could not connect: ' . mysql_error());
+  die('Could not connect: '.mysql_error());
   }
 
 mysql_select_db("studentinfo", $con);
 
-$result = mysql_query("SELECT * FROM department WHERE NAME='$NAME'");
+$result = mysql_query("SELECT * FROM department
+WHERE NAME='{$name}'");
+//$sql = "SELECT * FROM department WHERE NAME='$POST_['department']'";
+//$result = mysql_query($sql);
+
+if(!$result)
+{
+	die('error:'.mysql_error());
+}
 
 while($row = mysql_fetch_array($result))
   {

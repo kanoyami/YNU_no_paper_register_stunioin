@@ -9,6 +9,11 @@ if (!$con)
 // some code
 mysql_select_db("studentinfo", $con);
 mysql_query("set names utf8");
+
+mysql_query("CREATE TABLE IF NOT EXISTS studentunion(IDnum VARCHAR(22) NOT NULL,
+													 sex TINYTEXT,name TEXT,QQ VARCHAR(15),
+													 phone VARCHAR(24) NOT NULL,info LONGTEXT)");
+
 $sql="INSERT INTO studentunion (IDnum,name,QQ,phone,info,sex)
 VALUES
 ('$_POST[ID]','$_POST[name]','$_POST[QQ]','$_POST[Phone]','$_POST[UserInfo]','$_POST[sex]')";
