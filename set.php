@@ -1,5 +1,10 @@
 <?php
-
+$ID = $_POST['ID'];
+$name = $_POST['name'];
+$QQ = $_POST['QQ'];
+$Phone = $_POST['Phone'];
+$userinfo = $_POST['UserInfo'];
+$sex = $_POST['sex'];
 $con = mysql_connect("localhost","root","sw960602");
 if (!$con)
   {
@@ -16,7 +21,7 @@ mysql_query("CREATE TABLE IF NOT EXISTS studentunion(IDnum VARCHAR(22) NOT NULL,
 
 $sql="INSERT INTO studentunion (IDnum,name,QQ,phone,info,sex)
 VALUES
-('$_POST[ID]','$_POST[name]','$_POST[QQ]','$_POST[Phone]','$_POST[UserInfo]','$_POST[sex]')";
+('$ID','$name','$QQ','$Phone','$userinfo','$sex')";
 
 if (!mysql_query($sql,$con))
   {

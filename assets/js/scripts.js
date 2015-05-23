@@ -34,8 +34,16 @@ jQuery(document).ready(function() {
         var Phone = $(this).find('input#Phone').val();
         var UserInfo = $(this).find('input#UserInfo').val();
 
-        if (ID == '') {
-            $(this).find("label[for='ID']").append("<span style='display:none' class='red'> - Please enter your studentsID.</span>");
+        function isNum(s)
+        {
+            var patrn= /^[0-9]{1,20}$/;
+            if(!patrn.exec(s)) return false
+            return true
+        }
+
+
+        if (ID == ''||isNaN(ID) ) {
+            $(this).find("label[for='ID']").append("<span style='display:none' class='red'> - Please enter a valid studentsID. </span>");
             $(this).find("label[for='ID'] span").fadeIn('medium');
             return false;
         }
@@ -49,12 +57,12 @@ jQuery(document).ready(function() {
             $(this).find("label[for='name'] span").fadeIn('medium');
             return false;
         }
-        if(QQ == '') {
+        if(QQ == ''||!isNum(QQ)) {
             $(this).find("label[for='QQ']").append("<span style='display:none' class='red'> - Please enter a valid QQ.</span>");
             $(this).find("label[for='QQ'] span").fadeIn('medium');
             return false;
         }
-        if(Phone == '') {
+        if(Phone == ''||!isNum(Phone)) {
             $(this).find("label[for='Phone']").append("<span style='display:none' class='red'> - Please enter a valid Phone.</span>");
             $(this).find("label[for='Phone'] span").fadeIn('medium');
             return false;
@@ -68,6 +76,5 @@ jQuery(document).ready(function() {
 
 
 });
-
 
 
