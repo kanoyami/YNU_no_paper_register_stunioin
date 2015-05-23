@@ -56,9 +56,6 @@ mysql_select_db("studentinfo", $con);
 mysql_query("set names utf8");
 $result = mysql_query("SELECT * FROM department
 WHERE NAME like '%{$name}%'");
-//$sql = "SELECT * FROM department WHERE NAME='$POST_['department']'";
-//$result = mysql_query($sql);
-
 if(!$result)
 {
 	die('error:'.mysql_error());

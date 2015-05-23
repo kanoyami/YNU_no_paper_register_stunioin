@@ -40,42 +40,12 @@
                    
                 </div>
                 <div class="register span6">
-                    <form action="" method="post">
-
-						
-						
-<?php
-$name = $_POST['department'];
-$con = mysql_connect("localhost","root","sw960602");
-if (!$con)
-  {
-  die('Could not connect: '.mysql_error());
-  }
-
-mysql_select_db("studentinfo", $con);
-mysql_query("set names utf8");
-$result = mysql_query("SELECT * FROM department
-WHERE NAME like '%{$name}%'");
-//$sql = "SELECT * FROM department WHERE NAME='$POST_['department']'";
-//$result = mysql_query($sql);
-
-if(!$result)
-{
-	die('error:'.mysql_error());
-}
-
-while($row = mysql_fetch_array($result))
-  {
-  echo "<a href=".$row['link'].">".$row['NAME']."</a>";
-  }
-
-mysql_close($con);
-?>
-                    
-					
-					
-					
-					</form>
+                    <form action="search.php" method="post">
+                        <h3>入部 <span class="red"><strong>申请</strong></span></h3>
+                        <label for="department">输入你要加入的部门</label>
+                        <input type="text" id="department" name="department" placeholder="请输入...">
+                        <button type="submit">搜索</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -84,7 +54,7 @@ mysql_close($con);
         <script src="assets/js/jquery-1.8.2.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.backstretch.min.js"></script>
-        <script src="assets/js/scripts.js"></script>
+        <script src="assets/js/scripts.js">
 
     </body>
 
