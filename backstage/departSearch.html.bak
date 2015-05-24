@@ -12,8 +12,8 @@
 
         <!-- CSS -->
         
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -40,14 +40,11 @@
                    
                 </div>
                 <div class="register span6">
-                    <form action="/backstage/departSearch.html" method="post">
-                        <h3>云大 <span class="red"><strong>技术部</strong></span></h3>
-                        <h5>     提供技术支持</h5>
-                        <h4>     云大学生社团无纸化报名系统</h4>
-                        <h5>     Created by kanoyami@92loli.com</h5>
-                        <img src="assets/img/logo.png" width="350" height="350" />
-
-                        <button type="submit">进入</button>
+                    <form action="/backstage/search.php" method="post">
+                        <h3>入部 <span class="red"><strong>申请</strong></span></h3>
+                        <label for="department">输入你要加入的部门</label>
+                        <input type="text" id="department" name="department" placeholder="请输入...">
+                        <button type="submit">搜索</button>
                     </form>
                 </div>
             </div>
@@ -58,7 +55,6 @@
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.backstretch.min.js"></script>
         <script src="assets/js/scripts_onlyBGI.js"></script>
-
     </body>
 
 </html>

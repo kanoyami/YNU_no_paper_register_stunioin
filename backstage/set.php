@@ -5,6 +5,7 @@ $QQ = $_POST['QQ'];
 $Phone = $_POST['Phone'];
 $userinfo = $_POST['UserInfo'];
 $sex = $_POST['sex'];
+$pageID = $_POST['pageID'];
 $con = mysql_connect("localhost","root","sw960602");
 if (!$con)
   {
@@ -15,11 +16,11 @@ if (!$con)
 mysql_select_db("studentinfo", $con);
 mysql_query("set names utf8");
 
-mysql_query("CREATE TABLE IF NOT EXISTS £û$_POST['pageID']£ý(IDnum VARCHAR(22) NOT NULL,
+mysql_query("CREATE TABLE IF NOT EXISTS $pageID(IDnum VARCHAR(22) NOT NULL,
 													 sex TINYTEXT,name TEXT,QQ VARCHAR(15),
 													 phone VARCHAR(24) NOT NULL,info LONGTEXT)");
 
-$sql="INSERT INTO £û$_POST['pageID']£ý (IDnum,name,QQ,phone,info,sex)
+$sql="INSERT INTO $pageID (IDnum,name,QQ,phone,info,sex)
 VALUES
 ('$ID','$name','$QQ','$Phone','$userinfo','$sex')";
 
@@ -32,6 +33,6 @@ mysql_close($con);
 
 
 ?>
-<script>url="leavePage.html";window.location.href=url;</script>
+<script>url="/department_page/leavePage.html";window.location.href=url;</script>
 
 

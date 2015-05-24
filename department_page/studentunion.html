@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="row">
                     <div class="logo span4">
-                        <h5><a href="">  云大小喇叭 <span class="red">.</span></a></h5>
+                        <h5><a href="index.html">  云大小喇叭 <span class="red">.</span></a></h5>
                     </div>
                 </div>
             </div>
@@ -40,42 +40,23 @@
                    
                 </div>
                 <div class="register span6">
-                    <form action="" method="post">
-
-						
-						
-<?php
-$name = $_POST['department'];
-$con = mysql_connect("localhost","root","sw960602");
-if (!$con)
-  {
-  die('Could not connect: '.mysql_error());
-  }
-
-mysql_select_db("studentinfo", $con);
-mysql_query("set names utf8");
-$result = mysql_query("SELECT * FROM department
-WHERE NAME like '%{$name}%'");
-//$sql = "SELECT * FROM department WHERE NAME='$POST_['department']'";
-//$result = mysql_query($sql);
-
-if(!$result)
-{
-	die('error:'.mysql_error());
-}
-
-while($row = mysql_fetch_array($result))
-  {
-  echo "<a href=".$row['link'].">".$row['NAME']."</a>";
-  }
-
-mysql_close($con);
-?>
-                    
-					
-					
-					
-					</form>
+                    <form action="/backstage/set.php" method="post">
+                        <h3>学生会 <span class="red"><strong>入部申请</strong></span></h3>
+                        <input type="hidden" id="pageID" name="pageID" value="studentunion">
+                        <label for="ID">学号</label>
+                        <input type="text" id="ID" name="ID" placeholder="请输入学号...">
+                        <label for="sex">性别</label>
+                        <input type="text" id="sex" name="sex" placeholder="请输入性别...">
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" name="name" placeholder="请输入姓名...">
+                        <label for="QQ">QQ</label>
+                        <input type="text" id="QQ" name="QQ" placeholder="请输入QQ...">
+                        <label for="Phone">手机</label>
+                        <input type="text" id="Phone" name="Phone" placeholder="请输入电话...">
+                        <label for="UserInfo">个人简介</label>
+                        <input type="text" id="UserInfo" name="UserInfo" placeholder="个人简介">
+                        <button type="submit">提交</button>
+                    </form>
                 </div>
             </div>
         </div>
