@@ -40,7 +40,7 @@
                    
                 </div>
                 <div class="register span6">
-                    <form action="/backstage/search.php" method="post">
+                    <form action="search.php" method="post">
                         <h3>入部 <span class="red"><strong>申请</strong></span></h3>
                         <label for="department">输入你要加入的部门</label>
                         <input type="text" id="department" name="department" placeholder="请输入...">
